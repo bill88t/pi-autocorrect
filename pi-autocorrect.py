@@ -119,11 +119,10 @@ if args["ping"]:
     for i in configg["int_pings"]:
         if not ping(i):
             anygood = True
-        else:
     if not anygood and len(configg["int_pings"]) > 0:
         internet_down = True
     del anygood
-        
+
 # test if we can ping local computers
 if args["lanping"]:
     anygood = False
