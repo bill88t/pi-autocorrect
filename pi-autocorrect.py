@@ -18,7 +18,7 @@ def roottest(): # returns true when run as the user
     return True if getuid()!=0 else False
 
 def restart(): # reboots the host
-    system("shutdown -r now")
+    system("/usr/sbin/shutdown -r now")
     
 def log_restart(fnam): # logs time we rebooted
     with open(fnam, "a") as filee:
