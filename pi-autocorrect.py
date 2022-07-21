@@ -134,6 +134,8 @@ if args["lanping"]:
     for i in configg["lan_pings"]:
         if not ping(i):
             anygood = True
+    print(str(anygood))
+    print(str(len(configg["lan_pings"])))
     if not anygood and len(configg["lan_pings"]) > 0:
         lan_down = True
     del anygood
