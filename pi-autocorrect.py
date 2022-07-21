@@ -167,8 +167,6 @@ if do_it:
 with open(args["config"], "w") as cf:
     cf.write(json.dumps(configg))
 
-del configg
-
 # all or nothing
 if do_it:
     log_restart(configg["logfile"])
