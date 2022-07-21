@@ -115,27 +115,21 @@ method_specified = False
 # test if we can ping internet computers
 if args["ping"]:
     method_specified = True
-    print("Attempting a ping test: ")
     anygood = False
     for i in configg["int_pings"]:
         if not ping(i):
-            print("Ping success!")
             anygood = True
         else:
-            print("Ping failed!")
     if not anygood and len(configg["int_pings"]) > 0:
         internet_down = True
     del anygood
         
 # test if we can ping local computers
 if args["lanping"]:
-    print("Attempting a lan ping test:")
     anygood = False
     for i in configg["lan_pings"]:
         if not ping(i):
             anygood = True
-    print(str(anygood))
-    print(str(len(configg["lan_pings"])))
     if not anygood and len(configg["lan_pings"]) > 0:
         lan_down = True
     del anygood
