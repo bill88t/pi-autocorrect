@@ -172,8 +172,10 @@ del configg
 # all or nothing
 if do_it:
     log_restart(configg["logfile"])
+    del configg
     print("ALERT: APPLYING CORRECTIVE ACTION")
     restart()
     # we need no exit
 else:
+    del configg
     exit(0)
