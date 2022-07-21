@@ -161,13 +161,6 @@ del internet_down, lan_down, method_specified
 # am I gonna really do it?
 do_it = False
 drr = args["dry-run"]
-print(f"""
-need_restart: {need_restart}
-args-dry-run: {drr}
-clear_mode: {clear_mode}
-cond1: {(internet_down and lan_down)}
-cond2: {((internet_down or lan_down) and args["strict"])}
-""")
 del drr
 if need_restart and (not args["dry-run"]) and (not clear_mode):
     do_it = True
