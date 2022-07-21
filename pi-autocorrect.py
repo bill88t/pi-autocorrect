@@ -21,14 +21,10 @@ def restart(): # reboots the host
     system("shutdown -r now")
     
 def log_restart(fnam): # logs time we rebooted
-    filee = None
-    try:
-        filee = open(fnam, "a")
-    filee.write(
-        f"Rebooted @ {datetime.now().day}-{datetime.now().month}-{datetime.now().year} {datetime.now().hour}:{datetime.now().minute}\n"
-    )
-    filee.close()
-    del filee
+    with open(fnam, "a") as filee:
+        filee.write(
+            f"Rebooted @ {datetime.now().day}-{datetime.now().month}-{datetime.now().year} {datetime.now().hour}:{datetime.now().minute}\n"
+        )
 
 Version = "0.1"
 
