@@ -1,1 +1,1 @@
-{"lan_pings": ["192.168.1.1", "192.168.1.130"], "int_pings": ["1.1.1.1", "8.8.8.8", "dynv6.com", "reddit.com", "google.gr"], "status": 0, "lasttime": 0}
+{"lan_pings": ["192.168.1.1", "192.168.1.130"], "int_pings": ["1.1.1.1", "8.8.8.8", "dynv6.com", "reddit.com", "google.gr"], "status": 0, "lasttime": 0, "logfile": "/home/pi/pi-autocorrect.log"}

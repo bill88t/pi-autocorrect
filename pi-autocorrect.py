@@ -3,6 +3,7 @@
 from sys import argv
 from os import system, getuid
 from time import time, sleep
+from datetime import datetime
 import json
 import subprocess
 from psutil import boot_time
@@ -18,6 +19,16 @@ def roottest(): # returns true when run as the user
 
 def restart(): # reboots the host
     system("shutdown -r now")
+    
+def log_restart(fnam): # logs time we rebooted
+    filee = None
+    try:
+        filee = open(fnam, "a")
+    filee.write(
+        f"Rebooted @ {datetime.now().day}-{datetime.now().month}-{datetime.now().year} {datetime.now().hour}:{datetime.now().minute}\n"
+    )
+    filee.close()
+    del filee
 
 Version = "0.1"
 
@@ -164,6 +175,7 @@ del configg
 
 # all or nothing
 if do_it:
+    log_restart(configg["logfile"])
     print("ALERT: APPLYING CORRECTIVE ACTION")
     restart()
     # we need no exit
