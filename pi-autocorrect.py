@@ -119,7 +119,10 @@ if args["ping"]:
     anygood = False
     for i in configg["int_pings"]:
         if not ping(i):
+            print("Ping success!")
             anygood = True
+        else:
+            print("Ping failed!")
     if not anygood and len(configg["int_pings"]) > 0:
         internet_down = True
     del anygood
